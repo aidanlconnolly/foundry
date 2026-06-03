@@ -27,7 +27,7 @@ export async function addFlashcards(
     if (!term) continue;
 
     // Upsert shared flashcard (unique on deck+term).
-    let rows = await db
+    const rows = await db
       .select({ id: schema.flashcards.id })
       .from(schema.flashcards)
       .where(

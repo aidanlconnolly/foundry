@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Flame, Check, ArrowRight, Lock, Circle, Sparkles } from "lucide-react";
+import { Flame, Check, ArrowRight, Lock, Circle } from "lucide-react";
 import { getStages, getAllLessons } from "@/lib/content";
 import { getProgressMap, getProfile } from "@/lib/actions/progress";
 import ProgressRing from "@/components/ProgressRing";
 import Reveal from "@/components/Reveal";
+import StartToday from "@/components/StartToday";
 
 export const dynamic = "force-dynamic";
 
@@ -48,25 +49,7 @@ export default async function PathHome() {
       {/* ── Start Today / Continue ── */}
       <Reveal delay={0.05}>
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent-soft/60 to-surface p-5">
-            <div className="flex items-center gap-2 text-accent-strong">
-              <Sparkles className="h-4 w-4" />
-              <span className="text-xs font-semibold uppercase tracking-wide">
-                Start today
-              </span>
-            </div>
-            <p className="mt-2 text-sm text-muted">
-              {next
-                ? "One concrete move this week, tailored to where you are. Pick up the next lesson or ask the mentor for a plan."
-                : "You've cleared the path. Ask the mentor what to tackle next, or revisit a stage."}
-            </p>
-            <Link
-              href="/mentor"
-              className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-surface-2 px-3 py-2 text-sm font-medium text-fg transition hover:bg-surface-3"
-            >
-              Ask the mentor <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          <StartToday />
 
           <div className="rounded-2xl border border-border bg-surface p-5">
             <span className="text-xs font-semibold uppercase tracking-wide text-faint">

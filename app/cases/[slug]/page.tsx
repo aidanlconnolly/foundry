@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Sparkles } from "lucide-react";
 import { getCaseContent } from "@/lib/content/mdx";
 import { findCaseMeta } from "@/lib/content/cases";
 import { getBookmarked } from "@/lib/actions/lesson";
+import { getAiCase } from "@/lib/actions/ai";
 import BookmarkButton from "@/components/lesson/BookmarkButton";
+import MarkdownLite from "@/components/MarkdownLite";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +17,41 @@ export default async function CasePage({
 }) {
   const { slug } = await params;
   const compiled = await getCaseContent(slug);
-  if (!compiled) notFound();
+
+  // AI-generated case fallback.
+  if (!compiled) {
+    const ai = await getAiCase(slug);
+    if (!ai) notFound();
+    const bookmarked = await getBookmarked("case", slug);
+    return (
+      <article className="mx-auto max-w-2xl space-y-6">
+        <div className="flex items-center justify-between gap-3">
+          <Link
+            href="/cases"
+            className="inline-flex items-center gap-1.5 text-sm text-faint transition hover:text-fg"
+          >
+            <ArrowLeft className="h-4 w-4" /> Case Studies
+          </Link>
+          <BookmarkButton type="case" slug={slug} initial={bookmarked} />
+        </div>
+        <header>
+          <span className="inline-flex items-center gap-1.5 rounded-md bg-accent-soft/50 px-2 py-0.5 text-xs text-accent-strong">
+            <Sparkles className="h-3.5 w-3.5" /> AI-generated · {ai.verified}
+          </span>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-fg">
+            {ai.company}
+          </h1>
+          <p className="mt-2 text-xs text-faint">
+            Drafted by the AI mentor with web search. Verify specifics before
+            relying on them.
+          </p>
+        </header>
+        <div className="prose-editorial">
+          <MarkdownLite text={ai.markdown} />
+        </div>
+      </article>
+    );
+  }
 
   const fm = compiled.frontmatter;
   const meta = findCaseMeta(slug);

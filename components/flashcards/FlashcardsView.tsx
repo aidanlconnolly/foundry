@@ -22,7 +22,7 @@ export default function FlashcardsView({
     (acc[c.deck] ??= []).push(c);
     return acc;
   }, {});
-  const now = Date.now();
+  const [now] = useState(() => Date.now());
 
   if (reviewing) {
     return (

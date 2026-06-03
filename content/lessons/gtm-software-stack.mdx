@@ -1,0 +1,64 @@
+---
+doThis: "Install one analytics tool (PostHog is a great default) today and define your activation event and north-star in it. You can't improve what you don't measure — instrument before you optimize."
+quiz:
+  - q: "The first GTM software a startup actually needs is usually:"
+    options:
+      - "An enterprise CRM like Salesforce"
+      - "Product analytics to see activation and retention"
+      - "A marketing automation suite"
+      - "An attribution platform"
+    answer: 1
+    explain: "Early on, you need to see whether people activate and retain — product analytics (e.g. PostHog) comes first; heavy CRM/marketing tooling later."
+  - q: "Adopting a heavy enterprise GTM stack too early tends to:"
+    options:
+      - "Accelerate product-market fit"
+      - "Waste money and time configuring tools for scale you don't have"
+      - "Be required by investors"
+      - "Improve retention"
+    answer: 1
+    explain: "Premature heavy tooling is cost and complexity for a scale you haven't reached; start light."
+  - q: "A lightweight modern CRM suitable for early sales is:"
+    options:
+      - "Attio"
+      - "SAP"
+      - "Oracle"
+      - "None exist"
+    answer: 0
+    explain: "Attio (and similar) offer flexible, modern CRMs that fit early-stage sales without enterprise overhead."
+flashcards:
+  - term: "Product analytics"
+    definition: "Tools (PostHog, Amplitude, Mixpanel) that track activation, retention, and funnels — the first GTM instrumentation a startup needs."
+  - term: "CDP (customer data platform)"
+    definition: "Tools like Segment that collect events once and route them to every other tool — useful as your stack grows, overkill at the very start."
+  - term: "Lifecycle messaging"
+    definition: "Behavior-triggered email/push (Customer.io) that onboards, activates, and re-engages users automatically as you scale."
+---
+
+A small team can run a sophisticated go-to-market with a handful of tools — but the trick is adopting them in the right order. Buy too much too early and you'll spend weeks configuring enterprise software for customers you don't have; buy too little and you'll fly blind. Here's a sane progression.
+
+## Start with measurement
+
+Before optimizing anything, you need to *see* what's happening. The first and most important GTM tool is **product analytics**:
+
+- **PostHog** (a great all-in-one default — analytics, session replay, feature flags), or **Amplitude / Mixpanel**.
+- Define your **activation event** (the moment a user first gets value) and your **north-star**, and instrument them.
+
+You can't improve activation or retention you can't see. This comes *before* a CRM, before paid ads, before automation.
+
+## The stack by stage
+
+<Framework name="GTM stack progression">
+- **MVP / first users:** Product analytics (PostHog). A spreadsheet or a lightweight CRM (**Attio**) for the handful of leads you're working by hand.
+- **First revenue / repeatable:** A real but light **CRM** (Attio, HubSpot starter), **lifecycle messaging** (Customer.io) to automate onboarding/re-engagement, and a marketing site (**Webflow/Framer**).
+- **Scaling:** A **CDP** (Segment) to route data cleanly, fuller marketing automation (HubSpot), and **attribution** to understand which channels actually drive revenue.
+</Framework>
+
+## Don't out-tool your stage
+
+<Pull>The point of the GTM stack is leverage — letting a tiny team do what used to need a department. But every tool is also setup cost, a subscription, and a thing to maintain. Add each one only when a real need pulls it in.</Pull>
+
+The anti-pattern is a pre-revenue startup with Salesforce, a marketing automation suite, and an attribution platform — thousands of dollars and dozens of hours configuring machinery for a scale they're nowhere near. Start with analytics and a lightweight CRM; let growth pull in the heavier tooling exactly when a bottleneck demands it.
+
+## The leverage principle
+
+The modern GTM stack is genuinely powerful: lifecycle automation, self-serve analytics, and AI-assisted tooling let two people run growth that once required ten. Use that leverage — but sequence it. **Instrument first** (so you're deciding on data), automate the repetitive parts as patterns emerge, and reserve the heavy enterprise tooling for when you're actually scaling a proven motion.

@@ -1,0 +1,59 @@
+---
+doThis: "Decide your v1 build approach in one line: no-code, AI-assisted custom, or hire it out. Default to the lightest option that lets YOU iterate daily without waiting on anyone."
+quiz:
+  - q: "When is no-code the right v1 choice?"
+    options:
+      - "Always — code is obsolete"
+      - "When the product is mostly standard workflows and speed-to-test matters more than custom logic"
+      - "Never for real startups"
+      - "Only for landing pages"
+    answer: 1
+    explain: "No-code shines when the value is standard workflows and you want to test fast; it strains when you need deep custom logic or scale."
+  - q: "The 'AI-native default' for building in 2026 means:"
+    options:
+      - "Outsourcing everything to an agency"
+      - "A founder using AI coding tools to build and iterate a custom product quickly themselves"
+      - "Only using no-code"
+      - "Waiting to hire a large team"
+    answer: 1
+    explain: "AI coding tools let a small or even non-traditional team build custom software fast — the new default for technical iteration."
+  - q: "The main risk of building heavy custom infrastructure too early is:"
+    options:
+      - "It's too cheap"
+      - "You spend scarce time/money on scale you don't need before validating demand"
+      - "Investors dislike custom code"
+      - "It's always slower"
+    answer: 1
+    explain: "Premature scaling of infrastructure burns your scarcest resources solving problems you don't have yet."
+flashcards:
+  - term: "No-code vs custom"
+    definition: "No-code (Webflow, Bubble, Airtable) tests standard workflows fast; custom code is for deep logic, differentiation, and scale. Choose by what you need to learn now."
+  - term: "AI-native default"
+    definition: "In 2026, the default build path: a small team using AI coding tools (Cursor, Claude Code, v0) to ship and iterate custom software quickly."
+  - term: "Premature scaling"
+    definition: "Building for scale (microservices, heavy infra) before you have demand. Burns time and money solving problems you don't yet have."
+---
+
+Once you've validated enough to build, the first real decision is *how.* Get this wrong and you either over-engineer (months building infrastructure for users you don't have) or under-build (a no-code prototype that can't become the real thing). The modern answer is more flexible than it's ever been.
+
+## Three build paths
+
+<Framework name="How to build v1">
+- **No-code / low-code** (Webflow, Bubble, Airtable, Zapier, Softr) — Fastest to test standard workflows. Great for marketplaces' early days, internal tools, and concierge automation. Strains when you need custom logic, fine-grained UX, or scale.
+- **AI-assisted custom** (Cursor, Claude Code, v0 on Next.js/Supabase/Vercel) — The 2026 default. A small team — even a non-traditional builder — can ship real, ownable custom software in days. Best balance of speed and control.
+- **Hire it out** (agency or contractor) — Buys capacity if you truly can't build, but you lose iteration speed and own less knowledge. Usually a last resort for the core product.
+</Framework>
+
+## The principle: optimize for *your* iteration speed
+
+The right stack is the one that lets **you** change the product daily without waiting on anyone. Early on, learning velocity beats everything — architecture purity, scalability, even code quality. A founder who can tweak the product the moment they learn something from a user will out-iterate a "perfect" stack that requires a ticket and a sprint.
+
+That's why the AI-native path has become the default: it gives a tiny team the ability to build *and own* custom software at no-code speed. You're no longer forced to choose between "fast but throwaway" and "real but slow."
+
+## Avoid premature scaling
+
+The classic over-engineering trap: a pre-PMF team building microservices, Kubernetes, multi-region databases, and elaborate abstractions for a scale they're nowhere near. Every hour spent on infrastructure you don't need is an hour not spent finding product-market fit — your only real job at this stage. **Build the boring, monolithic, "good enough" version**, ship it, and let real load tell you what to harden. Most startups die from lack of demand, not from a database that couldn't scale.
+
+## The AI-native default stack (2026)
+
+A common, sane starting point: **Next.js + TypeScript** on **Vercel**, a managed Postgres (**Supabase**, **Neon**) or libSQL (**Turso**), **Stripe** for payments, and **Cursor / Claude Code** to build it. It's cheap, fast to deploy, scales surprisingly far, and — crucially — lets one founder move at the speed of their own learning. Reach for heavier tooling only when a real constraint forces it.

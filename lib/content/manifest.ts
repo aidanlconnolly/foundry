@@ -24,7 +24,7 @@ export const STAGES: Stage[] = [
         title: "A taxonomy of startup types",
         objective:
           "Map the major startup archetypes — SaaS, marketplace, consumer, deep tech, fintech, vertical AI, dev tools, hardware, biotech, ETA.",
-        minutes: 9,
+        minutes: 18,
       },
       {
         slug: "why-now-ai-era",

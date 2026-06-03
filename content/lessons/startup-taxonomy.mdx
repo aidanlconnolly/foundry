@@ -1,5 +1,13 @@
 ---
-doThis: "Write down which 2–3 archetypes your idea could fit, and for each, name the one metric investors in that category obsess over. If you can't, you don't yet understand the category you're entering."
+verified: "2026-06-03"
+doThis: "Pick the archetype that best fits your current idea. Find two companies that are 2–3 years ahead of where you want to be in that category. Study how they got from zero to their first $1M ARR (or equivalent). Write three things they did that you should copy."
+sources:
+  - label: "Bessemer Venture Partners — State of the Cloud (SaaS benchmarks)"
+    url: "https://www.bvp.com/atlas/state-of-the-cloud"
+  - label: "a16z — Marketplace 100 (marketplace dynamics)"
+    url: "https://a16z.com/marketplace-100/"
+  - label: "Bill Gurley — All Revenue is Not Created Equal (marketplace take rates)"
+    url: "https://abovethecrowd.com/2012/09/04/the-dangerous-seduction-of-the-lifetime-value-ltv-formula/"
 quiz:
   - q: "A marketplace startup's hardest early problem is usually:"
     options:
@@ -17,40 +25,347 @@ quiz:
       - "A dev tool"
     answer: 1
     explain: "Deep tech and biotech carry long R&D and regulatory timelines and heavy capital needs before any revenue."
-  - q: "Vertical AI refers to:"
+  - q: "Vertical AI's primary moat is:"
     options:
-      - "AI sold to consumers"
-      - "AI applied deeply to one industry's workflow (e.g. legal, healthcare)"
-      - "AI infrastructure like GPUs"
-      - "Open-source models"
+      - "Owning more GPUs than competitors"
+      - "Domain-specific data and deep workflow integration"
+      - "Being first to use an open-source model"
+      - "Lower API pricing"
     answer: 1
-    explain: "Vertical AI embeds models into a specific industry's workflow and data, where domain depth is the moat."
+    explain: "Any competitor can call the same foundational model. The moat is proprietary domain data, workflow integration, and switching costs built over time."
+  - q: "The bottoms-up SaaS sales motion (PLG) works best when:"
+    options:
+      - "The product requires executive sign-off before any usage"
+      - "Individual users can experience value before a purchasing decision"
+      - "The deal size exceeds $100k ACV"
+      - "The customer is a government agency"
+    answer: 1
+    explain: "PLG (product-led growth) works when end users adopt individually and create internal demand. High ACV and compliance-heavy buyers require top-down enterprise sales."
+  - q: "A fintech startup's biggest non-technical challenge is usually:"
+    options:
+      - "Building a mobile app"
+      - "Regulatory compliance and trust — earning the right to touch money"
+      - "Designing a logo"
+      - "Finding a technical co-founder"
+    answer: 1
+    explain: "Fintech founders often underestimate licensing, compliance, and the trust required before users hand over financial accounts. Stripe spent years on banking relationships before most users knew about them."
+  - q: "ETA (search fund) differs from traditional startups primarily because:"
+    options:
+      - "It targets the consumer market"
+      - "The founder buys and operates an existing profitable business rather than building from scratch"
+      - "It doesn't require outside capital"
+      - "It always exits via IPO"
+    answer: 1
+    explain: "ETA trades the zero-to-one risk of building for the acquisition and operational challenge of running an existing business. Revenue exists on day one; the risk is execution and integration."
 flashcards:
+  - term: "ARR (Annual Recurring Revenue)"
+    definition: "The annualized value of subscription contracts. The core SaaS health metric — investors track ARR growth rate and net revenue retention together."
+  - term: "Net Revenue Retention (NRR)"
+    definition: "What percentage of last year's revenue remains and has grown this year, from existing customers only. >100% means expansion revenue offsets churn. Best SaaS companies run 120–140%."
   - term: "Marketplace cold-start"
-    definition: "The chicken-and-egg problem of needing supply to attract demand and vice versa. Usually solved by manually seeding one side in one niche/geo."
+    definition: "The chicken-and-egg problem: need supply to attract demand, need demand to attract supply. Solved by manually seeding one side in one niche or geography before expanding."
+  - term: "GMV (Gross Merchandise Value)"
+    definition: "The total transaction value flowing through a marketplace. Revenue is GMV × take rate. High GMV with a low take rate is not a healthy business."
   - term: "Vertical SaaS"
-    definition: "Software built for one industry's specific workflow (e.g. dental, construction), where domain depth and tailored features beat horizontal tools."
+    definition: "Software built for one industry's specific workflow (e.g. dental practice management, construction project tracking), where deep domain features beat horizontal tools."
+  - term: "PLG (Product-Led Growth)"
+    definition: "A go-to-market motion where the product itself drives acquisition — users sign up, experience value, and create internal demand. Contrasted with top-down enterprise sales."
+  - term: "DAU/MAU ratio"
+    definition: "Daily Active Users divided by Monthly Active Users. Measures engagement 'stickiness.' Facebook runs ~65%. A ratio below 20% typically signals a casual, not habitual, product."
+  - term: "Unit economics (fintech)"
+    definition: "Revenue per transaction minus cost of capital, fraud losses, and servicing costs. Must be positive before scaling or losses compound geometrically."
+  - term: "Bottoms-up developer adoption"
+    definition: "Dev tool growth strategy where individual engineers adopt first (often free), prove internal value, then the company standardizes. Stripe, Twilio, and Vercel all grew this way."
+  - term: "Technical milestone (deep tech)"
+    definition: "A pre-revenue proof point investors use in place of ARR — e.g. Phase II trial success, prototype hitting a target spec. Each milestone unlocks the next funding round."
   - term: "ETA (search fund)"
-    definition: "Entrepreneurship Through Acquisition — buying and running an existing small business rather than building from scratch."
+    definition: "Entrepreneurship Through Acquisition — raising capital to search for, acquire, and operate an existing profitable small business rather than building from scratch."
+  - term: "Workflow lock-in (vertical AI)"
+    definition: "When an AI product becomes so embedded in a team's daily operations that switching costs are prohibitive — the strongest moat for vertical AI, beyond any model capability advantage."
 ---
 
-"Startup" is a genre, not a single thing — and each sub-genre has its own physics: different customers, sales motions, capital needs, timelines, and the one metric investors fixate on. Knowing which game you're playing tells you what "good" looks like and which playbook to copy.
+"Startup" is a genre, not a single thing — and each sub-genre has its own physics: different customers, sales motions, capital needs, timelines, and the one number investors fixate on. A marketplace founder copying a SaaS playbook will burn cash on features that create zero network effects. A biotech founder expecting consumer-app timelines will run out of money mid-trial. Knowing which game you're playing before you start is the most underrated thing in early-stage company building.
 
-## The major archetypes
+Here is a complete map of the eight major archetypes — what each is, how it gets built, which companies did it, what kills most of them, and what "good" looks like.
 
-- **SaaS (incl. vertical SaaS).** Recurring software, usually B2B. Metric: ARR growth + net revenue retention. Vertical SaaS goes deep on one industry's workflow; horizontal serves everyone.
-- **Marketplace.** Connects buyers and sellers (Airbnb, Uber). The hard part is the **cold-start**; the prize is network effects and take-rate. Metric: GMV, take rate, liquidity.
-- **Consumer.** Apps and brands sold to individuals. Cheap to try, brutal to retain. Metric: DAU/MAU, retention curves, virality.
-- **Fintech.** Money movement, lending, banking, payments. Heavy on trust, compliance, and unit economics. Metric: transaction volume, take rate, loss rates.
-- **Dev tools / infrastructure.** Sold bottoms-up to engineers. Metric: adoption, usage, conversion to paid.
-- **Deep tech / hardware / biotech.** Long R&D, big capital, regulatory gates. Metric: technical milestones before revenue.
-- **Vertical AI.** Models embedded into one industry's workflow (legal, healthcare, support). The 2026 darling — domain data and workflow integration are the moat.
-- **ETA / search funds.** Buy and operate an existing business instead of building one. A legitimate, lower-variance path (and a Wharton specialty via the Perlman fellowship).
+---
 
-<Framework name="Match the playbook to the genre">
-Before anything else, locate your idea on this map. A vertical-SaaS founder copying a consumer-app growth playbook will burn cash on virality that never comes; a deep-tech founder expecting SaaS timelines will run out of money before the science works. The category sets the rules — learn them before you play.
+## 1. SaaS
+
+### What it is
+
+Software-as-a-Service is recurring subscription revenue from software delivered over the internet, almost always B2B. The defining characteristic is predictable, compounding revenue: charge monthly or annually, expand within accounts, renew year after year. Horizontal SaaS serves everyone (Salesforce, Slack, Notion). Vertical SaaS goes deep on one industry's workflow where generic tools fall short — Veeva for life sciences, Procore for construction, Mindbody for fitness studios.
+
+### How it's built
+
+The 0→1 motion is usually direct sales or product-led growth (PLG). In PLG, individual users sign up free, experience value, and pull the product into their company's budget — Figma, Linear, and Notion all grew this way. Enterprise SaaS flips the motion: land with a senior buyer, expand across teams. The first hire after product is almost always a sales hire once you've found repeatable motion.
+
+Scaling SaaS is fundamentally about *compressing the sales cycle* and *reducing churn*. The benchmark milestones: $1M ARR (product works), $10M ARR (repeatable go-to-market), $30M ARR (the business is real). Top-tier vertical SaaS can get to $10M ARR on a single niche before expanding.
+
+### Company stories
+
+**Veeva Systems** was founded in 2007 by Peter Gassner, a former Salesforce executive who noticed life-sciences companies were trying to jam Salesforce into CRM workflows it wasn't built for. He built a single product for pharma sales reps, charged premium prices, and didn't expand into adjacent verticals for years. Veeva hit $1M ARR in year one, $130M in year five, and IPO'd in 2013 at a $4B valuation. The vertical discipline — resisting the urge to go horizontal early — was the strategy.
+
+**Figma** is the canonical PLG story. Co-founder Dylan Field launched a browser-based design tool when every designer used desktop Sketch. Individual designers adopted it for free; teams followed when they saw the collaboration advantage. Figma never ran outbound sales in its early years. By the time Adobe tried to acquire it for $20B in 2022, it had created a category.
+
+**Rippling** took the opposite path in a crowded HR-software market — it won by building an opinionated platform that unified payroll, HR, IT, and finance, then used an aggressive outbound enterprise sales team to land mid-market companies and expand seat by seat. The lesson: when the category is crowded, you win on completeness and bundling, not on a single feature.
+
+### What makes it hard
+
+Churn compounds brutally in reverse. A company with 120% NRR doubles roughly every five years from existing customers alone; a company at 80% NRR is slowly dying even if gross new ARR looks fine. Most SaaS failures aren't acquisition failures — they're retention failures that took three years to become obvious.
+
+### Capital & timeline
+
+Seed: $1–3M. Series A: $5–15M at ~$3–5M ARR. Series B: $20–50M at $10–20M ARR. First revenue in months, $1M ARR typically 12–24 months post-launch. Enterprise SaaS has longer sales cycles (6–18 months per deal) but dramatically higher ACV. Vertical SaaS can reach profitability early by serving a niche at premium pricing.
+
+### The metric
+
+**ARR growth rate + Net Revenue Retention.** At seed, investors want to see that the first 10 customers are staying and paying more. At Series A, 100%+ NRR is the signal that you have product-market fit, not just product-market interest.
+
+---
+
+## 2. Marketplace
+
+### What it is
+
+A marketplace connects two or more sides — buyers and sellers, hosts and guests, drivers and riders — and takes a cut of each transaction. The business model is structurally powerful: the marketplace doesn't own supply, so it scales without proportional capital. The downside is that the platform must be valuable enough that both sides choose it over transacting directly.
+
+### How it's built
+
+The cold-start problem is the defining early challenge. You need supply to attract demand, and demand to attract supply, and you have neither. The classic solution is to **manually seed one side in one small geography**, achieve local liquidity, prove that the market works, then expand. Airbnb's early team recruited hosts in New York by personally photographing apartments with professional cameras. Uber launched city by city, subsidizing both drivers and riders until liquidity was self-sustaining.
+
+After cold-start, the focus shifts to **liquidity** (can a buyer reliably find what they want?) and **take rate** (the percentage the platform captures per transaction). A typical consumer marketplace take rate is 10–30%. The platform adds trust mechanisms — reviews, identity verification, payments escrow — that make the take rate defensible.
+
+### Company stories
+
+**Airbnb** launched during the 2008 Democratic National Convention in Denver, when Brian Chesky and Joe Gebbia couldn't pay rent and rented out air mattresses in their apartment. Early growth was hand-to-hand: they flew to New York, met every host, and improved their listings themselves. The professional photography program — sending photographers to hosts' homes for free — was an unconventional operational bet that became a core early growth driver. By the time Sequoia invested in 2009, Airbnb had double-digit weekly growth from a standing start.
+
+**Faire** (wholesale marketplace for independent retailers and artisan brands) solved the cold-start by targeting a historically underserved side: small-batch makers who couldn't get shelf space in retail chains. Faire seeded supply by recruiting makers directly and offering guaranteed returns to retailers (Faire would cover unsold inventory). This dramatically reduced the risk for buyers, unlocking demand. The guarantee was expensive upfront but created a moat: no competing marketplace could afford to match it early.
+
+**Substack** is a simpler marketplace variant — a platform connecting writers to paid subscribers, taking 10% of subscription revenue. The early growth was writer-seeded: Substack recruited a small number of influential writers with upfront guarantees, knowing that a single popular newsletter would bring tens of thousands of subscribers onto the platform who might start their own.
+
+### What makes it hard
+
+Disintermediation — buyers and sellers transacting off-platform to avoid fees — is the existential risk. Platforms defend against it by adding services that only exist on-platform: payments, insurance, reviews, guaranteed returns. The second risk is supply-side concentration: if your top 10% of suppliers leave, the marketplace collapses. Etsy has faced this repeatedly as top sellers built their own Shopify stores.
+
+### Capital & timeline
+
+Seed: $2–5M. Series A: $10–20M once local liquidity is demonstrated. Series B+: heavy investment in supply/demand growth. Time to meaningful revenue: 12–18 months. The unit economics can look ugly early (subsidizing both sides) before the flywheel tips.
+
+### The metric
+
+**GMV, take rate, and liquidity.** GMV shows scale; take rate shows pricing power. Liquidity — the probability that a buyer finds what they want within a given time window — is the hardest to measure and the most important. A liquid marketplace is near-impossible to displace once established.
+
+---
+
+## 3. Consumer
+
+### What it is
+
+Consumer startups sell directly to individuals, not businesses. This includes apps (Duolingo, Calm, Robinhood), consumer brands (Warby Parker, Allbirds), social networks, and entertainment products. The distribution surface is enormous — app stores, social media, word-of-mouth, influencer — and so is the competition. The defining challenge is that individuals have a near-zero switching cost and an infinite number of alternatives for their attention.
+
+### How it's built
+
+Consumer products live and die by **retention curves**. A product with good retention shows a "smile" — the Day 1 drop is steep, but the curve flattens and a meaningful fraction of users are still active at Day 30 and Day 90. A product with bad retention is a slowly emptying bucket; no amount of acquisition spend fixes it.
+
+The 0→1 motion is often virality or influencer seeding. Instagram launched at SXSW 2010 and Kevin Systrom targeted photographers specifically — the product was the right product for the right community at the right moment. Robinhood used a waitlist with a referral system before launch; 1 million users were waiting on day one. The consumer startup playbook is: find the right initial community, nail the core loop for that community, then let organic growth or paid acquisition take over once retention is proved.
+
+### Company stories
+
+**Duolingo** is the best modern consumer retention story. The product is built around behavioral science — streaks, badges, push notifications, and leaderboards — all engineered to create a daily habit. By 2024, Duolingo had over 30 million daily active users, a DAU/MAU ratio above 25% in their core markets (high for a consumer app), and was growing revenue 40%+ YoY. The "streak" mechanic, which users almost universally cite as their reason for continuing, was the result of deliberate, data-driven product iteration, not intuition.
+
+**Calm** took a different path. The meditation app launched in a crowded wellness category and competed on brand and production quality — celebrities, sleep stories narrated by Matthew McConaughey, a premium feel in every touch. By positioning as the *premium* meditation app (versus the functional Headspace), they commanded higher prices and attracted subscribers willing to pay for the experience rather than just the utility.
+
+**BeReal** is a cautionary tale. The app hit 20 million DAU in 2022 on the strength of a single viral mechanic (a daily 2-minute window to post an unfiltered photo). But the mechanic was easy to copy — Instagram launched a clone within months — and BeReal had no additional retention loops, no social graph advantages, and no monetization. Daily actives crashed 60% within a year of the peak.
+
+### What makes it hard
+
+Consumer attention is a commodity and retention is brutal. Most consumer apps lose more than 90% of day-one users within a month. Paid acquisition becomes a trap: if you're buying users who churn, you're paying to fill a leaky bucket. The products that escape this are the ones that create genuine daily habits — and habits are hard to engineer deliberately.
+
+### Capital & timeline
+
+Seed: $1–3M. Series A: $5–15M, typically tied to retention proof (D30 ≥ 25% is a rough benchmark). Consumer unit economics vary wildly — a subscription app can be highly capital-efficient; a consumer brand with physical inventory is not. Time to profitability: 3–7 years for large consumer businesses; never for many.
+
+### The metric
+
+**DAU/MAU ratio, D30 retention, and LTV/CAC.** D30 ≥ 25% is considered strong. LTV/CAC > 3x is the threshold investors want to see before you scale paid acquisition.
+
+---
+
+## 4. Fintech
+
+### What it is
+
+Fintech is any startup that touches money — payments, lending, banking-as-a-service, wealth management, insurance, crypto, expense management, or B2B financial infrastructure. The category is massive (financial services is 25% of the global economy) and the regulatory and trust barriers are real. The unlock is that legacy financial institutions are architecturally terrible at software and deeply unmotivated to self-disrupt.
+
+### How it's built
+
+Fintech products typically start with a narrow wedge — one transaction type, one payment flow, one underwriting niche — and expand from there. Stripe launched with exactly one thing: seven lines of code to accept a payment on a website. Brex launched with exactly one thing: a corporate card for startups. The wedge creates initial revenue and trust, and the expansion into adjacent financial products captures more of the customers' wallet.
+
+The non-technical challenges are genuinely hard: money transmission licenses (a multi-year, state-by-state process in the US), banking partnerships, compliance infrastructure, fraud models, and the trust required for a user to connect their primary bank account. These barriers are also moats — they're why incumbents can't copy fast-moving fintechs easily, but also why copycats struggle.
+
+### Company stories
+
+**Stripe** began in 2010 when Patrick and John Collison noticed that accepting payments online was absurdly complicated — weeks of work and bank integrations. They built an API that reduced it to seven lines of code, distributed it to developers (bottoms-up, like a dev tool), and charged a simple 2.9% + $0.30 per transaction. The developer-first distribution was unconventional in fintech — payments companies had always sold top-down to finance teams. By 2024, Stripe processed hundreds of billions in annual payment volume and was valued at $65B.
+
+**Chime** built a neobank for Americans underserved by traditional banking — people who paid overdraft fees and couldn't access credit. Chime's model was to avoid fees entirely (revenue comes from interchange when users swipe), offer early direct deposit (two days ahead of traditional banks), and make the product so simple and mobile-first that a customer who'd been burned by their bank would trust it. By 2021, Chime had 13 million accounts and was the largest neobank in the US by customers.
+
+**Brex** launched in 2018 with a single insight: YC startup founders couldn't get corporate credit cards because they had no personal credit history. Brex underwrote risk based on the startup's bank balance and investor backing, not the founder's FICO score. They distributed through the YC network and scaled rapidly through referral within the startup ecosystem. The initial niche (YC startups) was a beachhead into the broader mid-market corporate card business.
+
+### What makes it hard
+
+Regulatory compliance is slow and expensive, fraud is constant, and unit economics can look great until you lose rate. A lending business with good origination will be destroyed by bad underwriting; a payments business with great volume will die if interchange compression hits. The biggest single mistake is scaling before the unit economics are proved — acquiring customers on thin or negative margins at scale is existential.
+
+### Capital & timeline
+
+Seed: $2–5M. Series A: $10–25M. Fintechs often raise larger rounds than SaaS at equivalent traction because of the regulatory and compliance infrastructure costs. Revenue from day one (every transaction), but profitability typically 4–8 years.
+
+### The metric
+
+**Transaction volume, take rate, and loss rate.** Revenue = volume × take rate. Profit = revenue minus cost of capital, fraud, and servicing. All three levers must be healthy simultaneously.
+
+---
+
+## 5. Dev tools & infrastructure
+
+### What it is
+
+Developer tools and infrastructure are products sold to engineers — SDKs, APIs, databases, CI/CD platforms, observability tools, cloud infrastructure layers. The category is structurally unusual: the buyer (the engineer who adopts) and the economic buyer (the company that gets the bill) are different people. This enables a bottoms-up distribution that bypasses procurement, but creates a different challenge: converting high adoption into revenue.
+
+### How it's built
+
+The 0→1 playbook is almost always: make the product free to start, optimize for developer experience, seed through open source or free tiers, and let organic adoption create internal champions who push for paid plans. Stripe, Twilio, GitHub, Vercel, and Supabase all grew this way. The developer experience is the product — if the first 20 minutes are frustrating, engineers will not evangelize it internally.
+
+The pricing model is typically **usage-based** (pay as you scale) rather than flat subscription, because usage-based aligns revenue with value and eliminates the "why am I paying for seats nobody uses" objection. The conversion motion is: free-tier developer → paid individual/team → company contract.
+
+### Company stories
+
+**Stripe** (see above, also a dev tool) is the archetype. But a more instructive case is **Twilio**, which launched in 2008 with a simple API for sending SMS. Twilio's founder Jeff Lawson built it because he was frustrated that adding voice to a web app required integrating with a telecom company. He sold it like a dev tool — documentation-first, not sales-first. By 2010, Twilio had tens of thousands of developer accounts from zero marketing spend. Revenue scaled as those developers' apps scaled.
+
+**Vercel** (the company, not just a product) built the dominant frontend deployment platform by optimizing for a developer-first experience: deploy from GitHub in one click, free tier, instant preview URLs for every pull request. Individual developers adopted it for side projects, then brought it to their employers. Vercel's revenue scales automatically as those companies' traffic scales. By 2023, Vercel was valued at $3.25B and powered a significant portion of the internet's frontend traffic.
+
+**Linear** is a newer example in project management — a category where Jira and Asana had long dominated. Linear won by making a product that engineers genuinely *wanted* to use, not just tolerated. Keyboard-first, fast, opinionated design. It spread bottoms-up through developer word-of-mouth faster than any competitor in the space had grown.
+
+### What makes it hard
+
+Converting free usage to revenue is the chronic challenge. Many dev tool companies have millions of users but weak monetization because the usage is scattered and individuals, not enterprises, are the paying unit. The companies that break through build strong enterprise features — SSO, audit logs, admin controls, SLAs — that give the enterprise buyer a reason to consolidate and pay.
+
+### Capital & timeline
+
+Seed: $1–3M. Series A: $5–15M. Capital-efficient compared to hardware or biotech because the product is software and distribution is organic. Revenue typically starts modest and inflects sharply as enterprise contracts land. First $1M ARR: 12–24 months from bottoms-up adoption.
+
+### The metric
+
+**Weekly active developers, then conversion to paid, then net dollar retention within enterprise accounts.** At seed, investors want to see developer love (GitHub stars, adoption, referrals). At Series A, conversion to paid and enterprise NRR.
+
+---
+
+## 6. Deep tech, hardware & biotech
+
+### What it is
+
+Deep tech covers startups where the core innovation is scientific or engineering risk, not primarily market or go-to-market risk: biotechnology and drug discovery, medical devices, advanced materials, robotics, semiconductors, fusion energy, climate tech hardware. Hardware startups — consumer electronics, industrial hardware, sensors — share the capital intensity but without the regulatory burden. The unifying feature is that the path to revenue runs through a lab, a factory, or a regulatory body before it reaches a customer.
+
+### How it's built
+
+The founding team almost always comes from research — a lab spinout, a PhD project, a patents portfolio from a defense contractor. The first 2–3 years are spent on **technical de-risking**: can the science work at all? The funding model mirrors this: SBIR grants and angels fund initial proof-of-concept, Series A funds prototype and initial trials, Series B funds scale-up or clinical work, Series C and beyond funds commercialization.
+
+For biotech specifically, the FDA pathway is the business plan: preclinical → Phase I (safety) → Phase II (efficacy) → Phase III (large-scale efficacy and safety) → NDA filing → approval. Each phase gate is a funding milestone. A successful Phase II trial can 5x a biotech's valuation overnight; a trial failure can end the company.
+
+### Company stories
+
+**Genentech** (founded 1976) pioneered the model: academia-to-biotech spinout, VC-funded, FDA-regulated path to commercialization. Co-founder Herbert Boyer held the foundational recombinant DNA patents. Genentech's first products — human insulin and human growth hormone — proved that biotechnology could produce drugs that were previously impossible. The company's IPO in 1980 was the first biotech IPO and created the template every biotech since has followed.
+
+**SpaceX** is the hardware deep-tech case study. Elon Musk founded SpaceX in 2002 with the goal of reducing the cost of access to space. The first three Falcon 1 launches failed; the company was nearly bankrupt before the fourth succeeded in 2008. SpaceX survived because of a $1.6B NASA contract awarded that same year. The lesson is brutal: deep-tech hardware companies need *anchor customers* who believe in the mission before commercial markets are proven. For SpaceX, that was NASA. For most hardware startups, it's a defense contract, a large enterprise pilot, or a government grant.
+
+**Recursion Pharmaceuticals** applies AI to drug discovery — using computer vision to analyze cellular images and identify drug candidates. The company raised hundreds of millions to build proprietary data infrastructure before a single drug reached clinical trials. By 2023 it had multiple programs in Phase I/II trials. The modern deep-tech playbook: use software to compress the experimental loop, but accept that the regulatory path is still years long regardless.
+
+### What makes it hard
+
+Everything takes longer than predicted and costs more than modeled. A biotech that plans for a 12-month Phase II trial will often run 24 months. A hardware startup that designs for a $150 bill of materials will often find their first manufactured unit costs $400. The companies that survive are the ones that raise 50% more than they think they need and plan their clinical or manufacturing milestones conservatively.
+
+### Capital & timeline
+
+Seed/pre-seed: $500K–$5M (SBIR + angels). Series A: $10–30M. Series B: $30–100M. Biotech specifically: total capital to Phase III often exceeds $150M. Time to revenue: 5–12 years for regulated biotech; 3–7 years for hardware; 3–5 years for deep-tech software with hardware components.
+
+### The metric
+
+**Technical milestones and capital efficiency to the next gate.** Before revenue, the metric is whether you hit your scientific or engineering targets on time and on budget. Investors track burn-to-milestone ratio: how much do you spend to advance from one phase gate to the next?
+
+---
+
+## 7. Vertical AI
+
+### What it is
+
+Vertical AI is the application of large language models and AI workflows to a specific industry's problems — not general AI assistants, but deeply domain-specific products for legal teams, radiologists, financial analysts, construction managers, or customer support operations. The defining bet is that domain depth and workflow integration matter more than the underlying model, which any competitor can also access via API.
+
+### How it's built
+
+Vertical AI companies often start by identifying a knowledge-worker workflow that is high-value, repetitive, and currently done by expensive humans: medical coding, contract review, insurance claims processing, financial document analysis. They build a product that replaces or augments that specific workflow, trained or fine-tuned on domain data.
+
+The 0→1 motion is almost always direct sales to a mid-market or enterprise buyer — a department head or VP with a budget for the specific problem. Unlike PLG dev tools, vertical AI often requires a human sale because the buyer needs trust, compliance assurances, and integration with existing systems before deploying AI on sensitive workflows.
+
+The moat builds over time: proprietary domain training data, deep integrations with the industry's legacy software stack, and workflow lock-in that makes switching prohibitively disruptive.
+
+### Company stories
+
+**Harvey** (legal AI) launched in 2022 by targeting BigLaw associates doing document review — a workflow where a single senior associate can bill hundreds of hours on a large deal. Harvey trained on legal corpora and built workflows specific to contract analysis, due diligence, and regulatory research. Within a year, it had signed multiple Am Law 100 firms and was valued at over $1.5B. The bet: lawyers at top firms will pay for AI that makes them 10x faster, and the ROI is self-evident.
+
+**Rad AI** applies AI to radiology reporting — generating first-draft radiology reports from imaging data, which radiologists then review and edit. The value proposition is direct: radiologists are in short supply globally, facing physician burnout and high error rates from fatigue. Rad AI doesn't replace radiologists; it removes the rote parts of the job. Enterprise sales into health systems required FDA clearance (a regulatory moat) and deep EMR integrations, both of which took years to build but now make the product nearly impossible to displace.
+
+**Lexi** and other vertical AI companies for construction focus on document processing — RFIs, submittals, change orders — which is among the most paperwork-intensive industries in the world. The construction vertical is instructive because the incumbent software (Procore, Autodesk) is deeply entrenched but not AI-native. Vertical AI wedges in at the document layer, builds trust, then expands.
+
+### What makes it hard
+
+Model commoditization: as foundational models improve, feature advantages built purely on model capability erode quickly. The companies that survive and scale are the ones that built proprietary data pipelines, deep EHR/CRM/legal software integrations, and workflow habits strong enough that ripping out the AI product would disrupt daily operations.
+
+### Capital & timeline
+
+Seed: $2–5M. Series A: $10–25M at $1–3M ARR with strong enterprise NRR. Series B: $30–80M. Revenue from first sales cycle (often 3–9 months for enterprise). Profitable unit economics are achievable early because AI inference costs are dropping and enterprise ACV is high ($50K–$500K+ per year per account).
+
+### The metric
+
+**ARR, NRR, and workflow attachment.** "Workflow attachment" — what percentage of the customer's target workflow runs through your product — is the key leading indicator of NRR. Low attachment = high churn risk. High attachment = strong expansion.
+
+---
+
+## 8. ETA & search funds
+
+### What it is
+
+Entrepreneurship Through Acquisition (ETA) is a path where an entrepreneur — often an MBA — raises a small fund from investors, spends 1–2 years searching for a small, profitable private company to acquire, buys it with a combination of investor equity and SBA or bank debt, and then runs it as the CEO. The acquired company typically has $1–10M in EBITDA, a defensible niche (a B2B service or software company with sticky customers), and a retiring or exiting owner.
+
+### How it's built
+
+The search phase is itself funded — investors provide a stipend of $400–600K for 18–24 months of searching. The searcher reviews hundreds of businesses, meets dozens of owners, and typically closes one acquisition. Post-acquisition, the value creation plan is operational: reduce churn, hire a sales team, improve margins, and often modernize the technology stack.
+
+The financing structure is typically 30% equity (from the search fund investors) and 70% debt (SBA 7(a) loans, seller notes, or bank debt), creating meaningful leverage. A company acquired at 5x EBITDA for $5M can, if grown to 2x the EBITDA over five years, return 5–8x the equity invested — attractive returns with lower variance than early-stage VC.
+
+### Company stories
+
+The modern ETA model was formalized at Stanford and Wharton business schools in the 1980s and 1990s. The Wharton Perlman Fellowship specifically supports search fund searchers. Notable examples are more operational than brand-name:
+
+**Patrick Curtis** (Wharton MBA) founded Wall Street Oasis after a successful ETA acquisition — a financial careers community acquired and grown into a large media and education business. His path illustrates that ETA doesn't have to mean running a B2B pest-control company; the model works anywhere there is a profitable, defensible niche business.
+
+**Alex Bridgeman** (not a Wharton example but illustrative) acquired a small B2B SaaS company at $1.5M ARR, installed a modern sales motion and pricing strategy, grew it to $4M ARR over three years, and exited at a 5x multiple. This is a representative ETA success story: modest scale, real operational value creation, strong risk-adjusted returns.
+
+### What makes it hard
+
+The search phase is psychologically brutal — most searchers look at 200+ businesses before finding the right one, and several late-stage deals fall through. Acquisition debt creates real pressure: the business must service the debt from day one, and a revenue dip in year one can be existential. Operating a business you didn't build, in an industry you may not know, with an inherited team, is genuinely hard.
+
+### Capital & timeline
+
+Search fund capital: $400–600K over 18–24 months. Acquisition: $2–15M in equity (co-invested with LPs) plus $3–20M in debt. Return timeline: 5–7 years to a liquidity event. Expected return on the equity: 5–10x in a successful case.
+
+### The metric
+
+**EBITDA growth and debt service coverage.** Unlike VC-backed companies, ETA businesses are valued on earnings, not revenue multiples. The EBITDA margin and the ratio of EBITDA to debt service payments are the measures of health.
+
+---
+
+<Framework name="Match the playbook to the genre before you do anything else">
+Each archetype has a *default-correct set of decisions* — how much to raise and from whom, what your first hire should be, what traction looks like at each stage, and how long until revenue. Pick the genre consciously, then study the two or three companies in that genre that are 2–3 years ahead of you. Their hiring decisions, their pricing moves, their go-to-market pivots are your most relevant data. Copying the wrong playbook is one of the most expensive mistakes an early founder can make — and it's entirely avoidable.
 </Framework>
 
-## Why the label matters
-
-The archetype determines your **default-correct decisions**: how much to raise and from whom, what your first hire should be, what traction looks like, and how long until revenue. It also tells investors instantly how to evaluate you — "we're vertical AI for X" frames every later conversation. Pick the genre consciously, then study the two or three best companies in it as your reference implementation.
+The label matters for one more reason: it frames every investor conversation. "We're vertical AI for commercial real estate asset managers" tells a sophisticated investor your sales motion, your likely ACV, your moat thesis, and your NRR potential — before you show a slide. Start with the genre, then fill in the specifics.

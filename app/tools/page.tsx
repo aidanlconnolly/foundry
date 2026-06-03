@@ -1,10 +1,18 @@
-import SectionStub from "@/components/SectionStub";
+import ToolDirectory from "@/components/tools/ToolDirectory";
 
 export default function ToolsPage() {
   return (
-    <SectionStub
-      title="Founder Tool Directory"
-      blurb="The software founders actually use to build and scale — by category and by the stage to adopt it, plus a starter stack for each phase."
-    />
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight text-fg">
+          Founder Tool Directory
+        </h1>
+        <p className="mt-1 max-w-prose text-muted">
+          The software founders actually use to build and scale — filterable by
+          category and the stage to adopt it. Starred picks are safe defaults.
+        </p>
+      </div>
+      <ToolDirectory />
+    </div>
   );
 }

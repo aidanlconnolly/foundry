@@ -75,6 +75,25 @@ export async function completeLesson(args: {
   await markLessonDone(args.lessonSlug, args.stageSlug);
 }
 
+export async function getBookmarked(
+  type: "lesson" | "case" | "tool",
+  refSlug: string,
+): Promise<boolean> {
+  const userId = await requireAuth();
+  const rows = await db
+    .select({ id: schema.bookmarks.id })
+    .from(schema.bookmarks)
+    .where(
+      and(
+        eq(schema.bookmarks.userId, userId),
+        eq(schema.bookmarks.type, type),
+        eq(schema.bookmarks.refSlug, refSlug),
+      ),
+    )
+    .limit(1);
+  return rows.length > 0;
+}
+
 export async function toggleBookmark(
   type: "lesson" | "case" | "tool",
   refSlug: string,

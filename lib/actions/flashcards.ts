@@ -5,7 +5,13 @@ import { and, eq, lte, sql } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { requireAuth } from "@/lib/auth";
 import { applyRating, freshCardState, type Rating1to4 } from "@/lib/srs";
+import { FOUNDER_VOCAB } from "@/lib/content/vocab";
 import type { Flashcard } from "@/lib/db/schema";
+
+/** Load the curated Founder Vocabulary deck into the caller's review deck. */
+export async function seedFounderVocab(): Promise<{ added: number }> {
+  return addFlashcards(FOUNDER_VOCAB, { deck: "Founder Vocabulary" });
+}
 
 /** Upsert shared flashcard content and seed a per-user review row (due now). */
 export async function addFlashcards(
